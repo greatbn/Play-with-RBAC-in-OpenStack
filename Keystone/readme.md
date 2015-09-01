@@ -36,7 +36,7 @@
 
 <img src="http://i.imgur.com/sbCNaVo.png">
 
-- Không cần restart lại glance-api và glance-registry
+- Không cần restart lại keystone
 - Đăng nhập với user saphi test
  + Tạo file saphi.sh với nội dung
 
