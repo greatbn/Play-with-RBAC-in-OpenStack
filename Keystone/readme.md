@@ -1,44 +1,44 @@
-#1.T?o user,tenant,role m?i 
-- T?o user saphi c� role VDC trong tenant VDC
- + t?o user
+#1.Tạo user,tenant,role mới 
+- Tạo user saphi có role VDC trong tenant VDC
+ + tạo user
 
   `keystone user-create --name saphi --pass saphi`
 
 <img src="http://i.imgur.com/RayBe64.png">
 
- + t?o tenant
+ + tạo tenant
 
    `keystone tenant-create --name VDC --description "VDC Tenant"`
  
 <img src="http://i.imgur.com/zrLIBVE.png">
 
- + T?o role
+ + Tạo role
 
    `keystone role-create --name VDC`
 
 <img src="http://i.imgur.com/d37ShkU.png">
 
- + Add user saphi v�o role VDC v� tenant VDC
+ + Add user saphi vào role VDC và tenant VDC
 
    `keystone user-role-add --user saphi --role VDC --tenant VDC`
 
-**M?c d?nh keystone ch? user admin role admin m?i c� th? du?c s? d?ng. Nhung gi? ta s? cho user saphi v?i role VDC trong tenant VDC c� th? s? d?ng du?c keystone**
+**Mặc định keystone chỉ user admin role admin mới có thể được sử dụng. Nhưng giờ ta sẽ cho user saphi với role VDC trong tenant VDC có thể sử dụng được keystone**
 
 <img src="http://i.imgur.com/YS7chgg.png">
 
-#2.S?a file /etc/keystone/policy.json
+#2.Sửa file /etc/keystone/policy.json
 
-- D�ng d?u ti�n is_admin:1 
+- Dòng đầu tiên is_admin:1 
 
 <img src="http://i.imgur.com/zK83KxQ.png">
 
-- Th�nh: role:VDC
+- Thành: role:VDC
 
 <img src="http://i.imgur.com/sbCNaVo.png">
 
-- Kh�ng c?n restart l?i glance-api v� glance-registry
-- �ang nh?p v?i user saphi test
- + T?o file saphi.sh v?i n?i dung
+- Không cần restart lại glance-api và glance-registry
+- Đăng nhập với user saphi test
+ + Tạo file saphi.sh với nội dung
 
 
 ```sh
@@ -48,8 +48,8 @@ export OS_TENANT_NAME=VDC
 export OS_AUTH_URL=http://10.10.10.71:35357/v2.0
 ```
 
-- Ch?y l?nh `source saphi.sh`
+- Chạy lệnh `source saphi.sh`
 
-- Test l?nh `keystone user-list`
+- Test lệnh `keystone user-list`
 <img src="http://i.imgur.com/Dgsx1QP.png">
-- �� ho?t d?ng 
+- Đã hoạt động 
