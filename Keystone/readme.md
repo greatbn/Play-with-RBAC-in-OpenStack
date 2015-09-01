@@ -51,5 +51,7 @@ export OS_AUTH_URL=http://10.10.10.71:35357/v2.0
 - Chạy lệnh `source saphi.sh`
 
 - Test lệnh `keystone user-list`
+
 <img src="http://i.imgur.com/Dgsx1QP.png">
+
 - Đã hoạt động 
