@@ -50,8 +50,10 @@ export OS_AUTH_URL=http://10.10.10.71:35357/v2.0
 
 - Chạy lệnh `source saphi.sh`
 
-- Test lệnh `glance image-create --name "DEMO" --disk-format qcow2 --container-format bare --is-public True --progress < cirros-0.3.4-x86_64-disk.img
-`
+- Test lệnh 
+
+`glance image-create --name "DEMO" --disk-format qcow2 --container-format bare --is-public True --progress < cirros-0.3.4-x86_64-disk.img`
+
 <img src="http://i.imgur.com/z3Jh6bQ.png">
 - Đã hoạt động 
 - Đăng nhập user admin kiểm tra các image
